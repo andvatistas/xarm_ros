@@ -25,9 +25,10 @@
     args="-urdf -model xarm7 -x -0.2 -y -0.6 -z 1.021 -param robot_description"/>
 
   <!-- load the corresponding controllers -->
-  <include file="$(find xarm_controller)/launch/xarm7_control.launch">
+  <include file="$(find xarm_controller)/launch/xarm7_position_control.launch">
+  <!--include file="$(find xarm_controller)/launch/xarm7_control.launch">
     <arg name="run_demo_traj" value="$(arg run_demo)"/>
-    <arg name="effort_control" value="$(arg effort_control)"/>
+    <arg name="effort_control" value="$(arg effort_control)"/-->
   </include>
 
 </launch>
