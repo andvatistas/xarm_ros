@@ -193,3 +193,46 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+
+
+
+## Add support for C++11, supported in ROS Kinetic and newer
+add_definitions(-std=c++11)
+
+# Load catkin and all dependencies required for this package
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  gazebo_ros
+  rospy
+  std_msgs
+)
+
+
+
+# Depend on system install of Gazebo
+find_package(gazebo REQUIRED)
+
+link_directories(${GAZEBO_LIBRARY_DIRS})
+include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
+
+# For keyboard control
+catkin_install_python(PROGRAMS
+   scripts/teleop_twist_keyboard.py
+   DESTINATION ${catkin_LIBRARIES}
+)
+
+# For obstacles_mover plugin
+add_library(obstacles_mover_plugin src/obstacles_mover.cpp)
+target_link_libraries(obstacles_mover_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+
+catkin_package(
+  DEPENDS
+    roscpp
+    gazebo_ros
+    rospy
+    std_msgs
+)
+

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+
+    <!-- Obstacle Box 1 -->
+    <model name="Obs1">
+        <pose>0.3 -0.2 0 0 0 0</pose>
+      <link name="linkob1">
+        <collision name="collisionob1">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+          <surface>
+              <friction>
+                <ode>
+                  <mu>0</mu>
+                  <mu2>0</mu2>
+                </ode>
+              </friction>
+            </surface>
+        </collision>
+
+        <visual name="visualob1">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+          <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Green</name>
+              </script>
+            </material>
+        </visual>
+      </link>
+      <plugin name="obstacles_mover_plugin" filename="libobstacles_mover_plugin.so"/>
+    </model>
+
+
+    <!-- Obstacle Box 2 -->
+    <model name="Obs2">
+        <pose>0.3 0.2 0 0 0 0</pose>
+      <link name="linkob2">
+        <collision name="collisionob2">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+          <surface>
+              <friction>
+                <ode>
+                  <mu>0</mu>
+                  <mu2>0</mu2>
+                </ode>
+              </friction>
+            </surface>
+        </collision>
+
+        <visual name="visualob2">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+          <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Red</name>
+              </script>
+            </material>
+        </visual>
+      </link>
+      <plugin name="obstacles_mover_plugin" filename="libobstacles_mover_plugin.so"/>
+    </model>
+
+  </world>
+</sdf>
