@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm7" >
-  <xacro:macro name="xarm7_robot" params="prefix:='' namespace:='xarm' limited:='false' effort_control:='false' 
+  <xacro:macro name="xarm7_robot" params="prefix:='' namespace:='xarm' limited:='false' effort_control:='false'
     attach_to:='world' xyz:='0 0 0' rpy:='0 0 0' ">
 
     <!-- common stuff -->

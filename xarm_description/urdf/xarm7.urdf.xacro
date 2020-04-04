@@ -165,7 +165,7 @@
     type="revolute">
     <origin
       xyz="0 0 0"
-      rpy="-1.5708 0 0" />
+      rpy="-1.5708 0 0" />  <!-- changed to 1 -->
     <parent
       link="${prefix}link1" />
     <child
@@ -279,7 +279,7 @@
     type="revolute">
     <origin
       xyz="0.0525 0 0"
-      rpy="1.5708 0 0" />
+      rpy="1.5708 0 0" /> <!-- 3.11 pitch instead of 0 -->
     <parent
       link="${prefix}link3" />
     <child
@@ -336,7 +336,7 @@
     type="revolute">
     <origin
       xyz="0.0775 -0.3425 0"
-      rpy="1.5708 0 0" />
+      rpy="1.5708 0 0" /> <!-- -3.11 pitch instead of 0 -->
     <parent
       link="${prefix}link4" />
     <child
