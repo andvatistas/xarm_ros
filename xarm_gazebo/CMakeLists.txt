@@ -220,7 +220,7 @@ include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE
 # For keyboard control
 catkin_install_python(PROGRAMS
    scripts/teleop_twist_keyboard.py
-   DESTINATION ${catkin_LIBRARIES}
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 # For obstacles_mover plugin
